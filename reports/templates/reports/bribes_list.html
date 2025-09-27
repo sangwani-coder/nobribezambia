@@ -1,0 +1,31 @@
+{% extends 'reports/layout.html' %}
+{% block title %}Reported Bribes{% endblock %}
+{% block content %}
+<h2>Reported Bribes</h2>
+
+<form method="get" action="{% url 'bribes_list' %}">
+  <input type="text" name="q" placeholder="Search by description, institution, or ministry" value="{{ query|default:'' }}">
+  <button type="submit">Search</button>
+  {% if query %}
+    <a href="{% url 'bribes_list' %}" class="clear-link">Clear search</a>
+  {% endif %}
+</form>
+
+
+<hr>
+
+<ul>
+  {% for report in bribes %}
+    <li>
+      <strong>{{ report.institution }}</strong> - {{ report.get_bribe_type_display }}<br>
+      Amount: K{{ report.amount|default:"Not specified" }}<br>
+      {{ report.description }}<br>
+      Reported on: {{ report.reported_at|date:"Y-m-d H:i" }}
+    </li>
+  {% empty %}
+    <li>No reports found.</li>
+  {% endfor %}
+</ul>
+
+<a href="{% url 'home' %}" class="back-link">Back to Home</a>
+{% endblock %}

@@ -1,0 +1,38 @@
+{% extends 'reports/layout.html' %}
+{% block title %}No Bribe{% endblock %}
+
+{% block content %}
+<section class="hero">
+    <h1 class="header">
+        <a href="{% url 'home' %}">No Bribe - Zambia</a>
+    </h1>
+    <p class="intro">
+        Welcome! Help fight corruption by reporting bribes you’ve paid.
+    </p>
+    <div class="cta-links">
+        <a href="{% url 'report_bribe' %}">Report a Bribe</a>
+        {% if total_reports %}
+        <a href="{% url 'bribes_list' %}">View ({{total_reports}}) Report(s)</a>
+        {% endif %}
+    </div>
+</section>
+
+<!-- Secondary Section -->
+<section class="stats">
+    <h2>Corruption Snapshot</h2>
+    <div class="stats-grid">
+        <div class="stat-card">
+            <h3>{{ total_reports }}</h3>
+            <p>Total Reports</p>
+        </div>
+        <div class="stat-card">
+            <h3>{{ institutions_count }}</h3>
+            <p>Institutions Reported</p>
+        </div>
+        <div class="stat-card">
+            <h3>{{ last_report_date|date:"M d, Y" }}</h3>
+            <p>Last Report</p>
+        </div>
+    </div>
+</section>
+{% endblock %}

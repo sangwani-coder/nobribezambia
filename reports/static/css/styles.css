@@ -1,0 +1,338 @@
+/* ====== Global Reset ====== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  line-height: 1.6;
+  background-color: #63230a;
+  color: #333;
+  padding-top: 70px; /* so nav doesn't overlap content */
+}
+
+/* ====== Navigation Bar ====== */
+nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: #006b3f; /* Zambia green */
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.5rem 1rem;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+  z-index: 1000;
+}
+
+nav img {
+  height: 40px;
+  object-fit: cover;
+}
+
+nav a {
+  color: #fff;
+  text-decoration: none;
+  margin: 0 15px;
+  font-weight: bold;
+  transition: color 0.3s;
+}
+
+nav a:hover {
+  color: #ffcc00; /* Zambia orange */
+}
+
+/* ====== Main Content ====== */
+main {
+  max-width: 900px;
+  margin: 2rem auto;
+  padding: 1rem;
+  background: #fff;
+  border-radius: 6px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+/* ====== Headings ====== */
+h1, h2, h3 {
+  color: #006b3f;
+  margin-bottom: 1rem;
+}
+
+/* ====== Paragraphs & Lists ====== */
+p {
+  margin-bottom: 1rem;
+}
+
+ul, ol {
+  margin: 1rem 0 1rem 2rem;
+}
+
+/* ====== Forms ====== */
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+  margin: 1rem 0;
+}
+
+form input[type="text"],
+form input[type="email"],
+form input[type="date"],
+form input[type="number"],
+form select,
+form textarea {
+  padding: 0.5rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  width: 100%;
+}
+
+form button {
+  background: #e23d28; /* Zambia red */
+  color: #fff;
+  padding: 0.7rem;
+  border: none;
+  border-radius: 4px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+form button:hover {
+  background: #c62f1d;
+}
+
+/* ====== Report List ====== */
+ul.report-list {
+  list-style: none;
+}
+
+ul.report-list li {
+  background: #f9f9f9;
+  border: 1px solid #ddd;
+  margin-bottom: 1rem;
+  padding: 1rem;
+  border-radius: 5px;
+}
+
+ul.report-list li strong {
+  color: #e23d28;
+}
+
+/* ====== Footer (optional if you add one) ====== */
+footer {
+  text-align: center;
+  padding: 1rem;
+  background: #006b3f;
+  color: #fff;
+  margin-top: 2rem;
+}
+
+/* Home page */
+/* ====== Home Page Styling ====== */
+
+/* Header Title */
+.header {
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.header a {
+  text-decoration: none;
+  font-size: 2.2rem;
+  font-weight: 800;
+  color: #e23d28; /* Zambia red */
+  transition: color 0.3s;
+}
+
+.header a:hover {
+  color: #ffcc00; /* Zambia orange */
+}
+
+/* Intro Paragraph */
+.intro {
+  text-align: center;
+  font-size: 1.2rem;
+  color: #fff;
+  margin-bottom: 2rem;
+  line-height: 1.6;
+}
+
+/* Call-to-Action Links */
+.cta-links {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  margin-top: 1rem;
+}
+
+.cta-links a {
+  background: #006b3f; /* Zambia green */
+  color: #fff;
+  padding: 0.8rem 1.5rem;
+  border-radius: 6px;
+  font-size: 1.1rem;
+  font-weight: bold;
+  text-decoration: none;
+  transition: background 0.3s, transform 0.2s;
+}
+
+.cta-links a:hover {
+  background: #004d2c;
+  transform: scale(1.05);
+}
+
+/* ====== Hero Banner Section ====== */
+.hero {
+  background: url("../images/flag.jpeg") no-repeat center center/cover;
+  min-height: 70vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: #fff;
+  padding: 2rem;
+  border-radius: 8px;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Add dark overlay so text is readable */
+.hero::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 0;
+}
+
+.hero .header,
+.hero .intro,
+.hero .cta-links {
+  position: relative;
+  z-index: 1; /* make sure text stays above overlay */
+}
+
+.hero .header a {
+  color: #ffcc00; /* standout yellow */
+  font-size: 2.8rem;
+}
+
+.hero .intro {
+  font-size: 1.4rem;
+  margin: 1rem 0 2rem;
+  max-width: 700px;
+}
+
+.hero .cta-links a {
+  background: #e23d28; /* Zambia red */
+}
+
+.hero .cta-links a:hover {
+  background: #c62f1d;
+}
+
+/* ====== Secondary Stats Section ====== */
+.stats {
+  text-align: center;
+  margin: 3rem auto;
+  max-width: 900px;
+  padding: 2rem;
+}
+
+.stats h2 {
+  color: #006b3f;
+  margin-bottom: 2rem;
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1.5rem;
+}
+
+.stat-card {
+  background: #fff;
+  border: 2px solid #eee;
+  border-radius: 8px;
+  padding: 1.5rem;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  transition: transform 0.2s;
+}
+
+.stat-card:hover {
+  transform: translateY(-5px);
+}
+
+.stat-card h3 {
+  font-size: 2rem;
+  color: #e23d28;
+  margin-bottom: 0.5rem;
+}
+
+.stat-card p {
+  color: #555;
+  font-size: 1rem;
+}
+
+/* ====== Back to Home Link ====== */
+.back-link {
+  display: inline-block;
+  margin: 1rem 0;
+  color: #006b3f; /* Zambia green */
+  font-weight: bold;
+  text-decoration: none;
+  border: 1px solid #006b3f;
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  transition: all 0.3s ease;
+}
+
+.back-link:hover {
+  background: #006b3f;
+  color: #fff;
+}
+
+/* ====== Clear Search Filter Link ====== */
+.clear-link {
+  display: inline-block;
+  margin-left: 1rem;
+  color: #e23d28; /* Zambia red */
+  font-size: 0.95rem;
+  font-weight: bold;
+  text-decoration: none;
+  border-bottom: 1px dashed #e23d28;
+  transition: color 0.3s ease, border-color 0.3s ease;
+}
+
+.clear-link:hover {
+  color: #c62f1d;
+  border-color: #c62f1d;
+}
+
+/* Style all help_texts for form fields */
+form .helptext {
+    display: block;              /* Make sure it appears on its own line */
+    font-size: 0.85rem;          /* Slightly smaller than normal text */
+    color: #555555;                 /* Dark gray color */
+    margin-top: 0.25rem;         /* Small spacing above */
+    margin-bottom: 0.5rem;       /* Small spacing below */
+}
+
+/* Optional: italicize help text */
+form .helptext {
+    font-style: italic;
+}
+
+/* Optional: make help text a different color for warnings or tips */
+form .helptext.warning {
+    color: #e23d28;              /* Zambia red for warnings */
+}
+
+form .helptext.tip {
+    color: #006b3f;              /* Zambia green for tips */
+}

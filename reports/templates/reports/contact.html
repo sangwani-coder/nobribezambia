@@ -1,0 +1,13 @@
+{% extends "reports/layout.html" %}
+{% block title %}Contact Us{% endblock %}
+
+{% block content %}
+<h2>Contact Us</h2>
+<p>If you are a member of the public or a government official, please use this form to reach out.</p>
+
+<form method="post">
+  {% csrf_token %}
+  {{ form.as_p }}
+  <button type="submit">Send</button>
+</form>
+{% endblock %}

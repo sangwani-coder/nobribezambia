@@ -1,0 +1,47 @@
+{% extends 'reports/layout.html' %}
+{% block title %}INFO{% endblock %}
+
+{% block content %}
+<h2>About "No Bribe – Zambia"</h2>
+
+<p>
+Bribery and corruption are challenges that slow down Zambia’s progress.  
+Every time a bribe is paid, it weakens trust in institutions, denies citizens fair access to services, and discourages honest businesses from growing.  
+Corruption affects everyone — it drains public resources that could build schools, hospitals, and better roads.
+</p>
+
+<h3>What is a Bribe?</h3>
+<p>
+A bribe is money, gifts, or favors given to a public official or private worker to receive services that should be free, quicker, or unfairly in your favor.  
+Examples include:
+</p>
+<ul>
+  <li>Paying an officer to avoid a traffic fine.</li>
+  <li>Giving money at a clinic to be attended to faster.</li>
+  <li>Paying a worker at a government office to skip a queue or get documents approved quickly.</li>
+  <li>Offering gifts to secure a job or contract.</li>
+</ul>
+
+<h3>Why Report a Bribe?</h3>
+<p>
+By reporting, you help shine a light on corrupt practices.  
+Your reports create data that shows where corruption happens most, helping citizens, civil society, and government institutions to act.  
+Reporting also reminds us that <strong>we do not have to accept corruption as normal</strong>.
+</p>
+
+<h3>How to Report</h3>
+<p>
+Using this platform, you can report a bribe you paid — whether <strong>known</strong> (you know the official who asked for it) or <strong>unknown</strong> (an anonymous request for payment).  
+Your name and email are optional, so you may report anonymously if you prefer.
+</p>
+
+<ol>
+  <li>Go to the <a href="{% url 'report_bribe' %}">Report a Bribe</a> page.</li>
+  <li>Fill in the form with details such as type of bribe, institution, amount (if known), and description.</li>
+  <li>Submit your report. It will appear in the <a href="{% url 'bribes_list' %}">Reported Cases</a> section.</li>
+</ol>
+
+<p>
+Together, we can build a Zambia where fairness, honesty, and accountability are the standard.
+</p>
+{% endblock %}

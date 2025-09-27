@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}{% endblock %} - Zambia</title>
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+</head>
+
+<body>
+    <nav>
+        <!-- Add zambia flag img(flag.png) to extend from start to end of nav -->
+        <img src="{% static 'images/flag.jpeg' %}" alt="zambian flag">
+        <a href="{% url 'home' %}">Home</a>
+        <a href="{% url 'info' %}">Info</a>
+        <a href="{% url 'contact' %}">Contact</a>
+        <!-- Add no corruption image as logo (stop.png) -->
+        <img src="{% static 'images/stop.png' %}" alt="stop corruption">
+    </nav>
+    <main>
+        {% block content %}
+        {% endblock %}
+    </main>
+    <footer>
+        <p>&copy; 2025 NoBribeZambia. All rights reserved.</p>
+    </footer>
+</body>
+
+</html>
